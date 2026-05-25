@@ -1,0 +1,77 @@
+.video {
+  transition: transform 0.3s ease-in-out;
+}
+
+.video-wrapper {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.play-btn, .icon-btn {
+  transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.play-btn:hover, .icon-btn:hover {
+  transform: scale(1.1);
+}
+
+.nav-btn {
+  transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+.play-pause-effect-overlay {
+  position: absolute; /* Fixed to the viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centered */
+  color: white;
+  font-size: 80px;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease-in-out;
+  z-index: 10; /* Ensure it's on top of other elements */
+}
+
+.play-pause-effect-overlay.play,
+.play-pause-effect-overlay.pause {
+  opacity: 1; /* Show when play/pause effect is active */
+}
+
+.top-icons,
+.nav-btn {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.top-icons.visible,
+.nav-btn.visible {
+  opacity: 1;
+}
+
+.top-icons.hidden,
+.nav-btn.hidden {
+  opacity: 0;
+}
+
+.play-pause-effect {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.video-container:hover .play-pause-effect {
+  opacity: 1;
+}

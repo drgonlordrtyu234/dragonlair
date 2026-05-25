@@ -1,0 +1,35 @@
+@media (max-width: 768px) {
+    .controls {
+      bottom: 60px;
+      left: 10px;
+    }
+  
+    .play-btn, .icon-btn {
+      padding: 8px;
+    }
+  
+    .top-icons {
+      top: 10px;
+      right: 10px;
+    }
+  
+    .top-icons .icon {
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .controls {
+      bottom: 50px;
+      left: 5px;
+    }
+  
+    .play-btn, .icon-btn {
+      padding: 6px;
+    }
+  
+    .top-icons .icon {
+      font-size: 18px;
+    }
+  }
+  

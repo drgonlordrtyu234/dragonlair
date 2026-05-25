@@ -1,0 +1,41 @@
+.share-section {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: #222;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    color: white;
+    padding: 15px;
+  }
+  
+  .share-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .share-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .share-options button {
+    background: #1e90ff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .share-options button:hover {
+    background: #0073e6;
+  }
+  

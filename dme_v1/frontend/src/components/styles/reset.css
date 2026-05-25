@@ -1,0 +1,108 @@
+/* Reset all default styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+    background-color: black;
+    color: white;
+    font-family: "Poppins", sans-serif; /* Optional: Use a modern font */
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+/* Remove list styles */
+ul, ol {
+  list-style: none;
+}
+
+/* Reset links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove default button styles */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Remove default form input styles */
+input, textarea, select {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* Reset images */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Ensure full-height layout */
+html, body {
+  height: 100%;
+  font-family: sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Remove default focus outline (optional, add your own custom focus styles later) */
+*:focus {
+  outline: none;
+}
+
+/* Normalize headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0%;
+}
+
+/* Reset table styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+/* Scrollbar Base Styles */
+::-webkit-scrollbar {
+    width: 5px; /* Super thin scrollbar */
+    height: 5px; /* For horizontal scrolling */
+  }
+  
+  /* Scrollbar Track */
+  ::-webkit-scrollbar-track {
+    background: black; /* Fully transparent track */
+    border-radius: 10px;
+  }
+  
+  /* Scrollbar Thumb */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 136, 0.6); /* Semi-transparent gradient */
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Scrollbar Hover Effect */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 136, 1); /* Slightly more visible on hover */
+  }
+  
+  /* Active Scrollbar (When Clicking) */
+  ::-webkit-scrollbar-thumb:active {
+    background: rgba(255, 136, 1.2); /* Brighter on click */
+  }
+  
+  /* Responsive Tweaks */
+  @media (max-width: 768px) {
+    ::-webkit-scrollbar {
+      width: 3px; /* Even thinner on mobile */
+    }
+  }
+  

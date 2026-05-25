@@ -1,0 +1,537 @@
+/* 🔥 Sidebar Container */
+.sidebar {
+  width: 60px;
+  height: 100vh;
+  background: black; /* Glassmorphism */
+  backdrop-filter: blur(10px);
+  color: white;
+  transition: width 0.4s ease-in-out, background 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+  z-index:1000;
+}
+
+/* 🌟 Expanded Sidebar */
+.sidebar.expanded {
+  width: 280px;
+  overflow-y: auto;
+  background: black; /* More visible when open */
+}
+
+/* ✨ Sidebar in Section Mode (AI, Trending, Notifications) */
+.sidebar.section-mode {
+  width: 320px;
+  margin:3%;
+  background: linear-gradient(135deg, #1c1f26, #252a33);
+}
+
+/* 📜 Scrollbar */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* 🎨 Menu Items */
+.menu {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* 📌 Menu Item Styling */
+.menu-item {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  padding:20px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+}
+
+/* 🌈 Gradient Hover Effect */
+.menu-item:hover {
+  transform: scale(1.05);
+  border-radius: 8px;
+  margin-left:3%;
+}
+
+/* 🎭 Menu Icons */
+.menu-icon {
+  font-size: 20px;
+  width: 50px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+/* 🚀 Icon Hover Effect */
+.menu-item:hover .menu-icon {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* 🏷️ Preview inside expanded sidebar */
+.preview {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.preview strong {
+  font-size: 14px;
+  color: #ffcc00;
+  transition: color 0.3s ease-in-out;
+}
+
+.preview span {
+  font-size: 12px;
+  color: #bbb;
+}
+
+/* 🔥 Notifications, AI, and Trending - Special Effects */
+.menu-item.special {
+  position: relative;
+}
+
+/* 🔔 Notification Glowing Effect */
+.menu-item.special .menu-icon {
+  animation: pulse 1.5s infinite alternate;
+}
+.menu-item:hover {
+  background: linear-gradient(45deg, #222, #000); /* Cool black gradient */
+  color: #fff;
+  border-radius: 8px; /* Smooth rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  transform: scale(1.05); /* Slight pop-out effect */
+}
+
+
+.menu-item.active {
+  background: linear-gradient(90deg, rgba(255, 136, 0.8), rgba(255, 56, 56, 0.8));
+  color: #fff;
+  border-radius: 5px; /* Optional: smooth rounded corners */
+  transition: 0.3s ease-in-out;
+}
+
+/* 💡 Pulse Effect */
+@keyframes pulse {
+  from {
+    text-shadow: 0 0 5px rgba(255, 204, 0, 0.8);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(255, 204, 0, 1);
+  }
+}
+
+/* 🌟 Section View */
+.section-view {
+  width: 100%;
+  padding: 20px;
+  color: white;
+}
+
+/* 📢 Section Title */
+.section-view h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 5px;
+}
+
+/* 📄 Section List */
+.section-view ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-view ul li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* 🎭 Section List Hover */
+.section-view ul li:hover {
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+/* 🔙 Back Button */
+.back-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.back-button svg {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 50px;
+  }
+  
+  .sidebar.expanded {
+    width: 240px;
+  }
+
+  .menu-item {
+    padding: 10px;
+  }
+  
+  .menu-icon {
+    font-size: 18px;
+  }
+  
+  .preview strong {
+    font-size: 12px;
+  }
+}
+.logo-container {
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 15px;
+}
+
+.app-logo {
+width: 40px;
+height: 40px;
+object-fit: cover;
+border-radius: 50%;
+transition: transform 0.3s ease-in-out;
+}
+
+.expanded .app-logo {
+transform: scale(1.1);
+}
+
+.app-name {
+font-size: 20px;
+font-weight: bold;
+margin-left: 10px;
+color: var(--text-color);
+transition: opacity 0.3s ease-in-out;
+}
+
+.collapsed .app-name {
+opacity: 0;
+}
+/* Placeholder Logo */
+.logo-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: none;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f8f8f8 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite linear;
+  margin-bottom: 20px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.sidebar.expanded .logo-placeholder {
+  display: block;
+}
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.app-name {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 8px; /* Adjust spacing */
+  color: white; /* Ensure visibility */
+  opacity: 1; /* Always visible */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.collapsed .app-name {
+  opacity: 0; /* Hide when collapsed */
+}
+
+.logo-placeholder {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.skeleton {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { background-color: #ddd; }
+  50% { background-color: #bbb; }
+  100% { background-color: #ddd; }
+}
+
+.logo-image {
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.logo-image.hidden {
+  opacity: 0;
+  position: absolute;
+}
+
+.logo-image.visible {
+  opacity: 1;
+}
+
+/* Expand Button */
+.toggle-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--sidebar-bg);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.toggle-button:hover {
+  background-color: var(--sidebar-hover-bg);
+  transform: scale(1.1);
+}
+
+.toggle-button svg {
+  font-size: 22px;
+  color: var(--sidebar-icon-color);
+  transition: color 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .toggle-button {
+    width: 35px;
+    height: 35px;
+    top: 8px;
+    left: 8px;
+  }
+  .toggle-button svg {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggle-button {
+    width: 30px;
+    height: 30px;
+    top: 6px;
+    left: 6px;
+  }
+  .toggle-button svg {
+    font-size: 16px;
+  }
+}
+
+.sidebar-divider {
+  width: 80%;
+  margin: 10px auto;
+  border: 0;
+  height: 1px;
+  background: #444;
+}
+
+.sidebar-footer {
+  text-align: center;
+  font-size: 12px;
+  color: #bbb;
+  padding: 10px;
+}
+/* 🔍 Search Bar Styling */
+.sidebar-search {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 8px 12px;
+  margin: 10px 15px;
+  transition: background 0.3s;
+}
+
+.sidebar-search:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.search-icon {
+  color: white;
+  font-size: 1rem;
+  margin-right: 8px;
+}
+
+.sidebar-search input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+.sidebar-search input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* 🔥 Responsive Search Bar */
+
+.sidebar-logo {
+  width: 70px;
+  height: auto;
+}
+
+.menu-item {
+  transition: background 0.3s ease-in-out;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Active State with Custom Gradient */
+.active-menu {
+  background: linear-gradient(90deg, rgba(255, 136, 0.8), rgba(255, 56, 56, 0.8));
+}
+/* Search Bar Container */
+.sidebar-search {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Search Icon */
+.search-icon {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  margin-right: 8px;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Input Field */
+.sidebar-search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Placeholder Text */
+.sidebar-search input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+/* Search Bar Hover */
+.sidebar-search:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Remove Border Highlighting on Focus */
+.sidebar-search input:focus {
+  box-shadow: none;
+}
+/* Search Bar Styling */
+.input-group {
+  background: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.input-group-text {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-control {
+  background: transparent;
+  color: white;
+  border: none;
+  box-shadow: none; /* Removes focus outline */
+  flex-grow: 1;
+}
+
+.form-control:focus {
+  background: transparent;
+  color: white;
+  border: none;
+  box-shadow: none; /* Ensures no border highlight on focus */
+}
+
+/* Search Text at the End */
+.search-text {
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 8px;
+  font-size: 14px;
+}
